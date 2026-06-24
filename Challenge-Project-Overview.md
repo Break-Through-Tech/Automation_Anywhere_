@@ -18,35 +18,58 @@
 
 ---
 
-### 🔍 SME Feedback from the Break Through Tech Evaluation Team
+## 📋 BTT Internal Evaluation Notes
+*(This section is for BTT staff only — remove before sharing with students)*
 
-*Challenge Advisor: Please address the following feedback by editing this page. Your AI Studio Coach can help make project adjustments as needed, too. In addition to the grey section above, this section should be removed before sharing the repo with your student team.*
+| Check | Status | Notes |
+|-------|--------|-------|
+| Python Compatibility | GREEN | The tech stack is centered on Python, in line with ML foundations. |
+| Data Readiness | YELLOW | The data readiness is questionable as the size of the dataset is unknown; students may face challenges if it exceeds accessible thresholds. |
+| Resource Check | GREEN | No specialized hardware or proprietary software constraints specified, indicating accessibility for students. |
 
+**Student Fit Score:** 7/10  
+**Technical Depth Score:** 6/10  
+**Overall Recommendation:** REVISE
+
+**Advisor Feedback Draft:**
+The project has solid potential for real-world relevance and applicability. However, I recommend clarifying data size to ensure adequate preparation time for the students. Additionally, providing a clearer breakdown of success metrics would aid in maintaining the focus throughout the project timeline. Finally, ensure that the context and requirements for LLM usage are covered in preliminary sessions to prevent knowledge gaps. This will strengthen the learning experience significantly.
+
+> ## Challenge Advisor: Update & Finalize Your Project Overview
+>
+> > 💡 **These grey text instructions are just for you, the team's Challenge Advisor; please delete them once you have completed the steps below.**
+>
+> We've pre-populated this Challenge Project Overview page — which is what will be shared with your Break Through Tech student team in August — using the details from your submission form. In order for your project to be finalized and assigned to a team, please:
+>
+> 1. **Send us your GitHub username** so we can add you as a Collaborator to this repo, which will enable you to make edits. If you don't have a username, you can create a free account [here](https://github.com/signup). Once you are ready to share your username, simply reply to the email that sent you to this repo. Once we receive your GitHub username, you will get an email inviting you to join this repo as a Collaborator and can begin making edits. 
+> 2. **Review all sections below** and update or expand any content as needed, making sure to address the SME Feedback in the section immediately below. Look for square brackets to find the places below that require additional inputs from you (e.g., "About [Company / Org Name]").
+> 3. **Add your dataset** to the [data folder](data) in this repo.
+> 4. **Close the Issue assigned to you in this repo** to let us know that you have made your edits and the overview page is ready for final review. You can do this by going to the _Issues_ tab in the top left section of the menu above, add a comment that says "CA review complete", and click the button to Close the Issue. 
+>
+> If you're unfamiliar with how to edit a page like this in GitHub, check out [this tutorial](https://ubc-lib-geo.github.io/gis-workshop-waml-template/content/handson/edit-readme.html) for a quick overview (start with step 2 and only edit this page), and [this guide](https://ubc-lib-geo.github.io/gis-workshop-waml-template/content/markdown.html) on how to use Markdown to compose text. 
+> 
 ---
 
-# [Project Title]
+# Project Proposal 1: Evaluation Framework for Agent Benchmark Datasets
 
-**Company / Org:** [Company / Org Name]  
-**Challenge Advisor:** [Name, Title, Email]  
+**Company / Org:** Automation Anywhere  
+**Challenge Advisor:** Sandra Wang, sandra.wang@automationanywhere.com  
 **Program:** Break Through Tech AI Studio - Fall 2026
 
 ---
 
-## 🏢 About [Company / Org Name]
+## 🏢 About Automation Anywhere
 
-[2-3 sentences about your company: what you do, your industry, etc. You may also choose to specify your specific department or team.]
+Automation Anywhere is a leader in the Robotic Process Automation (RPA) industry, dedicated to empowering businesses with intelligent automation solutions. Our innovative software streamlines processes and enhances operational efficiency across various sectors.
 
 ---
 
 ## 🎯 The Challenge
 
 ### Project Summary
-[In 2-3 sentences, describe what you're asking the team to do. Be specific about the type of data, ML techniques, and potential impact.]
-
-> **Example:** "In this project, your team will use customer transaction data and classification algorithms to build a model that predicts which users are likely to churn. This will help our retention team prioritize outreach."
+This project focuses on designing and building an evaluation framework to assess the quality, coverage, and usefulness of datasets intended for agent benchmarking. Students will apply their framework to two datasets — a high-quality real-world benchmark (tau-bench) and a provided synthetic dataset — and demonstrate that their metrics can meaningfully distinguish between them.
 
 ### Success Criteria
-[What does success look like? Describe evaluation metrics (accuracy, F1 score, etc.) or qualitative outcomes that would make this project valuable to your company.]
+Discriminative Power, Score-to-Reality Alignment, Metric Validation, Actionable Reporting, and Scoring Consistency.
 
 ### Project Milestones
 
@@ -54,9 +77,9 @@ Use these milestones to guide your work. Your team will create a **GitHub Projec
 
 | Month | Milestone | Key Activities |
 |-------|-----------|----------------|
-| **September** | [e.g., Data Understanding] | [e.g., Explore dataset, handle missing values, document findings] |
-| **October** | [e.g., Model Development] | [e.g., Train baseline model, experiment with approaches, iterate] |
-| **November** | [e.g., Evaluation & Presentation] | [e.g., Finalize model, prepare presentation, document results] |
+| **September** | Data Understanding | Explore datasets, handle missing values, document findings |
+| **October** | Model Development | Train baseline model, experiment with approaches, iterate |
+| **November** | Evaluation & Presentation | Finalize model, prepare presentation, document results |
 
 > **Note for the team:** Please create a GitHub Projects board in this repository to break these milestones into weekly tasks. Go to the **Projects** tab → **New project** → Choose **Board** → Add columns for each month.
 
@@ -64,13 +87,13 @@ Use these milestones to guide your work. Your team will create a **GitHub Projec
 
 ## 📊 Dataset
 
-**Name and Source:** [Dataset name and where it's from]  
+**Name and Source:** τ-bench (tau-bench)  
 **Format:** [e.g., CSV, JSON, images]  
-**Size:** [Approximate size in MB/GB]  
+**Size:** unknown  
 **Location:** [Link to dataset or instructions for accessing it]
 
 ### Key Details
-- [Brief description of what's in the data]
+- The primary dataset is τ-bench (tau-bench), a realistic agent benchmarking dataset that simulates customer service interactions across the retail, telecom, and airline domains. A secondary lower-quality synthetic dataset is also provided for comparison.
 - [Any known limitations or preprocessing needed]
 - [Link to data dictionary or documentation, if available]
 
@@ -81,7 +104,10 @@ Use these milestones to guide your work. Your team will create a **GitHub Projec
 **ML Problem Type:** [e.g., Classification, Regression, NLP, Computer Vision, LLM/RAG]
 
 **Recommended Libraries:**
-- [e.g., pandas, scikit-learn, TensorFlow, Hugging Face]
+- Python
+- Data visualization (distributions, radar charts, per-metric breakdowns)
+- LLM baseline agents (e.g., ReAct-prompted models)
+- GitHub.
 
 **Evaluation Metrics:**
 - [e.g., Accuracy, Precision/Recall, RMSE, BLEU score]
@@ -130,10 +156,12 @@ The following resources will help your team understand the problem space and pot
 2. **Begin reviewing the dataset** using the link above
 3. **Read the GitHub Projects documentation** [here](https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects)
 
-I’m excited to work with you!
+I'm excited to work with you!
 
 ---
 
 ## ❓ Questions?
 
-Please bring any questions to our first meeting during the week of August 24th (Break Through Tech’s Bridge to Studio - Session B). 
+Please bring any questions to our first meeting during the week of August 24th (Break Through Tech's Bridge to Studio - Session B).
+
+---
